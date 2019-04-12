@@ -23,7 +23,7 @@ export default class OuverturePage extends React.Component{
               <Text style={styles.appName}>STUDY ONLINE</Text>
               <Image
                 style={styles.stretch}
-                source={require('../assets/icon.png')}
+                source={require('../assets/ETUDESK.jpg')}
               />
               <Text style={styles.slogan}>Formez vous sur Study Online et devenez efficace.</Text>
           </View>
