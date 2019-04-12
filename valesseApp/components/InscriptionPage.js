@@ -2,6 +2,11 @@ import React from 'react';
 import {StyleSheet, Text, Image, Button, View} from 'react-native';
 
 export default class InscriptionPage extends React.Component{
+
+  static navigationOptions = {
+    title: 'Inscrivez-vous à Study Online',
+  };
+
   render(){
     return(
       <View style={styles.containerView}>
