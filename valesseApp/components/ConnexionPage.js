@@ -8,9 +8,9 @@ export default class ConnexionPage extends React.Component{
     this.state = { username: '', password: '' };
   }
 
-  static navigationOptions = {
-    title: 'Connectez-vous à Study Online',
-  };
+  // static navigationOptions = {
+  //   title: 'Connectez-vous à Study Online',
+  // };
 
   render(){
     return(
