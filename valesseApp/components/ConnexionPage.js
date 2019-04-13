@@ -1,5 +1,5 @@
 import React from 'react';
-import {StyleSheet, Text, Image, Button, TouchableHighlight, TextInput, View} from 'react-native';
+import {StyleSheet, Text, Image, Button, TouchableHighlight,KeyboardAvoidingView, TextInput, View} from 'react-native';
 
 export default class ConnexionPage extends React.Component{
 
@@ -14,7 +14,7 @@ export default class ConnexionPage extends React.Component{
 
   render(){
     return(
-      <View style={styles.containerView}>
+      <KeyboardAvoidingView style={styles.containerView} behavior="padding" keyboardVerticalOffset={120} enabled>
 
         <View style={styles.entete}>
           <Text style={styles.title}>STUDY ONLINE</Text>
@@ -59,36 +59,67 @@ export default class ConnexionPage extends React.Component{
             placeholder="Entrez votre email"
           />
           <TextInput
-            secureTextEntry={true} 
-            style={{height: 40, width: 300, borderColor: 'gray', borderWidth: 1, marginBottom:15, padding:7}}
+            secureTextEntry={true}
+            style={{height: 40,
+              width: 300,
+              borderColor: 'gray',
+              borderWidth: 1, 
+              marginBottom:'2%', 
+              padding:7}}
             onChangeText={(password) => this.setState({password})} 
             value={this.state.password}
             placeholder="Entrez votre mot de passe"
           />
+          <Text style={styles.forgot_password}>Mot de passe oublié ?</Text>
 
-            <Button 
-              onPress={()=>{}}
-              style={{width: 180}}
-              title="Connexion"
-              color="#2b78e4"
-            />
-          
+          <View style={styles.btn_connect_view}>
+            <TouchableHighlight style={styles.btn_connexion}>
+              <Button 
+                onPress={()=>{}}
+                title="Connexion"
+                color="#2b78e4"
+              />
+            </TouchableHighlight>
+          </View>
+          <Text style={styles.instructions}>Vous n'avez pas de compte ? Inscrivez vous maintenant !</Text>
         </View>
 
-      </View>
+      </KeyboardAvoidingView>
     );
   }
 }
 
 const styles = StyleSheet.create({
+  instructions: {
+    textAlign: 'center',
+    color: '#2b78e4',
+    fontSize: 13,
+    marginTop: 4
+  },
   containerView: {
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
+    padding: 10
+  },
+  btn_connect_view: {
+    alignSelf: 'center',
+    marginBottom: '2%'
+  },
+  forgot_password: {
+    textDecorationLine: 'underline',
+    alignSelf: 'flex-end',
+    color: 'gray',
+    fontSize: 14,
+    marginBottom:'2%',
   },
   fbk: {
     width: 150,
     marginRight: '2%'
+  },
+  btn_connexion: {
+    width: 160,
+    marginBottom: '2%'
   },
   goo: {
     width: 150,
@@ -98,25 +129,28 @@ const styles = StyleSheet.create({
     textAlign: 'center'
   },
   connexion: {
-    fontSize: 27,
-    textAlign: 'center'
+    fontSize: 20,
+    textAlign: 'center',
+    marginBottom: '2%'
   },
   title: {
-    fontSize: 20,
+    fontSize: 16,
     fontWeight: 'bold'
   },
   viewButton: {
     flexDirection: 'row',
     padding:12,
-    marginBottom: 5
+    marginBottom: '1%'
   },
   stretch:{
     marginTop:20,
-    width: 150,
-    height: 150,
-    marginBottom: 20
+    width: 130,
+    height: 130,
+    marginBottom: 20,
+    alignSelf: 'center'
   },
   form: {
-
+    alignItems: 'center',
+    justifyContent: 'center'
   }
 });
