@@ -5,15 +5,16 @@ export default class InscriptionPage extends React.Component{
 
   constructor(props) {
     super(props);
-    this.state = { username: '', email: '', password: '', etablissement: '' };
+    this.state = { email: '', password: '' };
   }
+  
   static navigationOptions = {
     title: 'Inscrivez-vous à Study Online',
   };
 
   render(){
     return(
-        <KeyboardAvoidingView style={styles.containerView} behavior="padding" enabled>
+        <KeyboardAvoidingView style={styles.containerView} behavior="padding" keyboardVerticalOffset={100} enabled>
 
               <View style={styles.entete}>
                 <Text style={styles.title}>STUDY ONLINE</Text>
@@ -51,24 +52,14 @@ export default class InscriptionPage extends React.Component{
               </View>
 
               <View style={styles.form}>
-                <TextInput
-                  style={{height: 40, width: 300, borderColor: 'gray', borderWidth: 1, marginBottom:15, padding:7}}
-                  onChangeText={(username) => this.setState({username})}
-                  value={this.state.username}
-                  placeholder="Entrez votre username"
-                />
+
                 <TextInput
                   style={{height: 40, width: 300, borderColor: 'gray', borderWidth: 1, marginBottom:15, padding:7}}
                   onChangeText={(email) => this.setState({email})}
                   value={this.state.email}
-                  placeholder="Entrez votre email (optionnel)"
+                  placeholder="Entrez votre email"
                 />
-                <TextInput
-                  style={{height: 40, width: 300, borderColor: 'gray', borderWidth: 1, marginBottom:15, padding:7}}
-                  onChangeText={(etablissement) => this.setState({etablissement})}
-                  value={this.state.etablissement}
-                  placeholder="Entrez votre etablissement"
-                />
+
                 <TextInput
                   secureTextEntry={true}
                   style={{height: 40,
@@ -93,7 +84,7 @@ export default class InscriptionPage extends React.Component{
                   
                 </View>
               </View>
-
+              <Text style={styles.instructions}>Vous avez deja un compte ? Connectez vous ?</Text>
         </KeyboardAvoidingView>
     );
   }
@@ -115,13 +106,6 @@ const styles = StyleSheet.create({
   btn_connect_view: {
     alignSelf: 'center',
     marginBottom: '2%'
-  },
-  forgot_password: {
-    textDecorationLine: 'underline',
-    alignSelf: 'flex-end',
-    color: 'gray',
-    fontSize: 14,
-    marginBottom:'2%',
   },
   fbk: {
     width: 150,
