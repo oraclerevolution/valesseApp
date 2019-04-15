@@ -7,10 +7,14 @@ export default class InscriptionPage extends React.Component{
     super(props);
     this.state = { email: '', password: '' };
   }
-  
+
   static navigationOptions = {
     title: 'Inscrivez-vous à Study Online',
   };
+
+  _goToConnexion(){
+    this.props.navigation.navigate('Connexion');
+  }
 
   render(){
     return(
@@ -84,7 +88,11 @@ export default class InscriptionPage extends React.Component{
                   
                 </View>
               </View>
-              <Text style={styles.instructions}>Vous avez deja un compte ? Connectez vous ?</Text>
+              <Text 
+                style={styles.instructions}
+                onPress={this._goToConnexion.bind(this)}>
+                Vous avez deja un compte ? Connectez vous ?
+              </Text>
         </KeyboardAvoidingView>
     );
   }

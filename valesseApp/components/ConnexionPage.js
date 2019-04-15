@@ -8,9 +8,13 @@ export default class ConnexionPage extends React.Component{
     this.state = { username: '', password: '' };
   }
 
-  // static navigationOptions = {
-  //   title: 'Connectez-vous à Study Online',
-  // };
+  static navigationOptions = {
+    title: 'Connectez-vous à Study Online',
+  };
+
+  _goToInscription(){
+    this.props.navigation.navigate('Inscription');
+  }
 
   render(){
     return(
@@ -81,7 +85,7 @@ export default class ConnexionPage extends React.Component{
               />
             </TouchableHighlight>
           </View>
-          <Text style={styles.instructions}>Vous n'avez pas de compte ? Inscrivez vous maintenant !</Text>
+          <Text style={styles.instructions} onPress={this._goToInscription.bind(this)}>Vous n'avez pas de compte ? Inscrivez vous maintenant !</Text>
         </View>
 
       </KeyboardAvoidingView>
