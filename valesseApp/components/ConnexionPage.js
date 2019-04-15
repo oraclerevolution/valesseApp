@@ -16,6 +16,10 @@ export default class ConnexionPage extends React.Component{
     this.props.navigation.navigate('Inscription');
   }
 
+  _goToMenu(){
+    this.props.navigation.navigate('Menu')
+  }
+
   render(){
     return(
       <KeyboardAvoidingView style={styles.containerView} behavior="padding" keyboardVerticalOffset={120} enabled>
@@ -79,7 +83,7 @@ export default class ConnexionPage extends React.Component{
           <View style={styles.btn_connect_view}>
             <TouchableHighlight style={styles.btn_connexion}>
               <Button 
-                onPress={()=>{}}
+                onPress={this._goToMenu.bind(this)}
                 title="Connexion"
                 color="#2b78e4"
               />
