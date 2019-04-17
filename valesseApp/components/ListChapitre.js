@@ -5,6 +5,10 @@ import ListItem from './ListItem';
 
 class ListChapitrePage extends React.Component{
 
+    static navigationOptions = {
+        title: 'Liste des chapitres',
+    };
+    
     render(){
         return(
             <View style={styles.container}>

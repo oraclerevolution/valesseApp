@@ -3,6 +3,10 @@ import {StyleSheet, Text, Image, View, TouchableHighlight} from 'react-native';
 
 export default class InscriptionPage extends React.Component{
 
+    static navigationOptions = {
+        title: 'Bienvenue à Study Online',
+    };
+    
     _goToListQuizz(){
         this.props.navigation.navigate('ListeChapitre');        
     }
