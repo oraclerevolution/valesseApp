@@ -1,7 +1,12 @@
 import React from 'react';
-import {StyleSheet, Text, Image, View} from 'react-native';
+import {StyleSheet, Text, Image, View, TouchableHighlight} from 'react-native';
 
 export default class InscriptionPage extends React.Component{
+
+    _goToListQuizz(){
+        this.props.navigation.navigate('ListeChapitre');        
+    }
+
     render(){
         return(
             <View style={styles.containerView}>
@@ -14,21 +19,33 @@ export default class InscriptionPage extends React.Component{
                 <View style={styles.lienView}>
 
                     <View style={styles.part1}>
-                        <View style={styles.element_flottant_1}>
-                            <Text style={styles.topic}>Résumé cours</Text>
-                        </View>
-                        <View style={styles.element_flottant_2}>
-                            <Text style={styles.topic}>Résumé cours</Text>
-                        </View>
+                        <TouchableHighlight>
+                            <View style={styles.element_flottant_1}>
+                                <Text style={styles.topic}>Résumé cours</Text>
+                            </View>
+                        </TouchableHighlight>
+
+                        <TouchableHighlight onPress={this._goToListQuizz.bind(this)}>
+                            <View style={styles.element_flottant_2}>
+                                <Text style={styles.topic}>Quizz cours</Text>
+                            </View>
+                        </TouchableHighlight>
+                        
                     </View>
 
                     <View style={styles.part2}>
-                        <View style={styles.element_flottant_3}>
-                            <Text style={styles.topic}>Résumé cours</Text>
-                        </View>
-                        <View style={styles.element_flottant_4}>
-                            <Text style={styles.topic}>Résumé cours</Text>
-                        </View>
+                        <TouchableHighlight>
+                            <View style={styles.element_flottant_3}>
+                                <Text style={styles.topic}>Sujets d'examens</Text>
+                            </View>
+                        </TouchableHighlight>
+
+                        <TouchableHighlight>
+                            <View style={styles.element_flottant_4}>
+                                <Text style={styles.topic}>Profil</Text>
+                            </View>
+                        </TouchableHighlight>
+                        
                     </View>
                     
                 </View>
