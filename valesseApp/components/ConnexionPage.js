@@ -1,3 +1,4 @@
+//components/ConnexionPage.js
 import React from 'react';
 import {StyleSheet, Text, Image, Button, TouchableHighlight,KeyboardAvoidingView, TextInput, View} from 'react-native';
 

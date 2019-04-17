@@ -1,3 +1,4 @@
+//components/OuverturePage.js
 import * as React from 'react';
 import {StyleSheet, Text, Image, Button, TouchableHighlight, View} from 'react-native';
 

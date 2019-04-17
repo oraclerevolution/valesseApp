@@ -1,3 +1,4 @@
+//components/InscriptionPage.js
 import React from 'react';
 import {StyleSheet, Text, Image, Button, TextInput, KeyboardAvoidingView, TouchableHighlight, View} from 'react-native';
 

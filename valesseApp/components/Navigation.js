@@ -1,4 +1,4 @@
-import React from 'react';
+//components/Navigation.js
 import { createStackNavigator, createAppContainer } from 'react-navigation';
 import OuverturePage from './OuverturePage';
 import ConnexionPage from './ConnexionPage';
