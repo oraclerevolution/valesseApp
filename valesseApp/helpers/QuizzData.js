@@ -3,7 +3,7 @@
 export default data = [
     {
         id: 0,
-        nom_chapitre: "statisques",
+        nom_chapitre: "Statisques",
         description: 'Ce quizz vous permettra de maitriser les stats niveau TD',
         nb_quizz: 3
     },

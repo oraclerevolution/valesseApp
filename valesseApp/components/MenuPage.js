@@ -1,7 +1,7 @@
 import React from 'react';
 import {StyleSheet, Text, Image, View, TouchableHighlight} from 'react-native';
 
-export default class InscriptionPage extends React.Component{
+export default class MenuPage extends React.Component{
 
     static navigationOptions = {
         title: 'Bienvenue à Study Online',
@@ -65,6 +65,7 @@ const styles = StyleSheet.create({
     },
     topic: {
       textAlign:'center',
+      fontWeight: 'bold'
     },
     part2: {
         flex: 1,
@@ -73,26 +74,30 @@ const styles = StyleSheet.create({
     element_flottant_1: {
         borderWidth: 1,
         flexDirection: 'row',
-        width: '50%',
+        minWidth: '50%',
+        height: '100%',
         alignItems: 'center',
         justifyContent:'center'
     },
     element_flottant_2: {
         borderWidth: 1,
-        width: '50%',
+        minWidth: '50%',
+        height: '100%',
         alignItems: 'center',
         justifyContent:'center'
     },
     element_flottant_3: {
         borderWidth: 1,
         flexDirection: 'row',
-        width: '50%',
+        minWidth: '50%',
+        height: '100%',
         alignItems: 'center',
         justifyContent:'center'
     },
     element_flottant_4: {
         borderWidth: 1,
-        width: '50%',
+        minWidth: '50%',
+        height: '100%',
         alignItems: 'center',
         justifyContent:'center'
     },

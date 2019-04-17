@@ -26,11 +26,12 @@ const styles = StyleSheet.create({
     main_container: {
         height: 40,
         borderWidth: 1,
-        marginBottom: 5,
+        margin: 5,
     },
     smallIcon: {
       height: 25,
-      width: 25
+      width: 25,
+      marginRight: 2,
     },
     content_container: {
         flex: 1,
