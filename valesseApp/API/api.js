@@ -1,5 +1,10 @@
-import axios from 'axios'
+//API/api.js
 
-export default axios.create({
-    baseURL: 'http://127.0.0.1:3000/'
-})
+const API_URL = 'http://127.0.0.1:3000';
+
+export function getChapitreFromApi(){
+    const url = API_URL+'/showList'
+    return fetch(url)
+        .then((res) => res.json())
+        .catch((err) => console.log(err))
+}
