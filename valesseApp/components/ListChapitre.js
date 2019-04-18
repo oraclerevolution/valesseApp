@@ -1,23 +1,28 @@
 //components/ListChapitre.js
 import React from 'react';
-import {StyleSheet, Text, View, FlatList} from 'react-native';
+import {StyleSheet, ActivityIndicator, View, FlatList} from 'react-native';
 import ListItem from './ListItem';
-import axios from 'axios';
+import {getChapitreFromApi} from '../API/api';
 
 class ListChapitrePage extends React.Component{
 
     constructor(props){
         super(props)
         this.state = {
-            chapitres: []
+            chapitres: [],
+            isLoading: false
         }
     }
 
     componentDidMount(){
-        axios.get('http://127.0.0.1:3000/showList')
-            .then(res => {
-                this.setState({ chapitres: res.data })
-            })
+        this.setState({ isLoading: true })
+        getChapitreFromApi().then(data => {
+            this.setState({ 
+                chapitres: data.results,
+                isLoading: false
+             })
+        })
+
     }
     
     static navigationOptions = {
@@ -32,6 +37,14 @@ class ListChapitrePage extends React.Component{
                     keyExtractor={(item) => item.id.toString()}
                     renderItem={({item}) => <ListItem chapitre={item}/>}
                 />
+            
+            {
+                this.state.isLoading ?
+                    <View style={styles.loading_container}>
+                        <ActivityIndicator size='large' />
+                    </View>
+                    : null
+            }
             </View>
         );
     }
@@ -43,6 +56,15 @@ const styles =  StyleSheet.create({
         padding: 0,
         margin: 0,
         backgroundColor: '#efefef'
+    },
+    loading_container: {
+        position: 'absolute',
+        left: 0,
+        right: 0,
+        top: 100,
+        bottom: 0,
+        alignItems: 'center',
+        justifyContent: 'center'
     }
 });
 
