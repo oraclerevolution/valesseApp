@@ -8,7 +8,6 @@ class ListChapitrePage extends React.Component{
 
     constructor(props){
         super(props)
-        this._chapitres = []
         this.state = {
             chapitres: []
         }
@@ -17,8 +16,7 @@ class ListChapitrePage extends React.Component{
     componentDidMount(){
         axios.get('http://127.0.0.1:3000/showList')
             .then(res => {
-                this._chapitres = res.data
-                this.forceUpdate()
+                this.setState({ chapitres: res.data })
             })
     }
     
@@ -30,7 +28,7 @@ class ListChapitrePage extends React.Component{
         return(
             <View style={styles.container}>
                 <FlatList
-                    data = {this._chapitres}
+                    data = {this.state.chapitres}
                     keyExtractor={(item) => item.id.toString()}
                     renderItem={({item}) => <ListItem chapitre={item}/>}
                 />
