@@ -3,8 +3,18 @@ import React from 'react';
 import {StyleSheet, Text, View, FlatList} from 'react-native';
 import chapitres from '../helpers/QuizzData';
 import ListItem from './ListItem';
+import API from '../API/api';
 
 class ListChapitrePage extends React.Component{
+
+    getChapitres = event => {
+        event.preventDefault();
+        API.get('showList')
+            .then(res => {
+                console.log(res)
+                console.log(res.data)
+            })
+    }
 
     static navigationOptions = {
         title: 'Liste des chapitres',
