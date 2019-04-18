@@ -1,21 +1,27 @@
 //components/ListChapitre.js
 import React from 'react';
 import {StyleSheet, Text, View, FlatList} from 'react-native';
-import chapitres from '../helpers/QuizzData';
 import ListItem from './ListItem';
-import API from '../API/api';
+import axios from 'axios';
 
 class ListChapitrePage extends React.Component{
 
-    getChapitres = event => {
-        event.preventDefault();
-        API.get('showList')
-            .then(res => {
-                console.log(res)
-                console.log(res.data)
-            })
+    constructor(props){
+        super(props)
+        this._chapitres = []
+        this.state = {
+            chapitres: []
+        }
     }
 
+    componentDidMount(){
+        axios.get('http://127.0.0.1:3000/showList')
+            .then(res => {
+                this._chapitres = res.data
+                this.forceUpdate()
+            })
+    }
+    
     static navigationOptions = {
         title: 'Liste des chapitres',
     };
@@ -24,7 +30,7 @@ class ListChapitrePage extends React.Component{
         return(
             <View style={styles.container}>
                 <FlatList
-                    data = {chapitres}
+                    data = {this._chapitres}
                     keyExtractor={(item) => item.id.toString()}
                     renderItem={({item}) => <ListItem chapitre={item}/>}
                 />
