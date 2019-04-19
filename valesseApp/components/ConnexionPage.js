@@ -24,7 +24,31 @@ export default class ConnexionPage extends React.Component{
   //fonction de login
 
   _login(){
-    
+    fetch('http://localhost:3000/users', {
+      method: 'POST',
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json',
+        },
+          body: JSON.stringify({
+            username: this.state.username,
+            password: this.state.password,
+          })
+    })
+    .then((response) => response.json())
+    .then((res) => {
+
+      if (res.success === true) {
+        var username = res.message;
+
+        AsyncStorage.setItem('username', username);
+        this.props.navigation.navigate('Menu')
+        
+      } else {
+        alert(res.message)
+      }
+    })
+    .done();
   }
 
   render(){
@@ -90,7 +114,7 @@ export default class ConnexionPage extends React.Component{
           <View style={styles.btn_connect_view}>
             <TouchableHighlight style={styles.btn_connexion}>
               <Button 
-                onPress={this._goToMenu.bind(this)}
+                onPress={this._login.bind(this)}
                 title="Connexion"
                 color="#2b78e4"
               />
