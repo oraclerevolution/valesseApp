@@ -20,6 +20,12 @@ export default class ConnexionPage extends React.Component{
   _goToMenu(){
     this.props.navigation.navigate('Menu')
   }
+  
+  //fonction de login
+
+  _login(){
+    
+  }
 
   render(){
     return(
