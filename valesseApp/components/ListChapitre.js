@@ -18,7 +18,7 @@ class ListChapitrePage extends React.Component{
         this.setState({ isLoading: true })
         getChapitreFromApi().then(res => {
             this.setState({ 
-                chapitres: res.results,
+                chapitres: res.json(),
                 isLoading: false
              })
         })
