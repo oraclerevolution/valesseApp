@@ -17,6 +17,10 @@ export default class InscriptionPage extends React.Component{
     this.props.navigation.navigate('Connexion');
   }
 
+  _goToChoicePage(){
+    this.props.navigation.navigate('PageDeChoix')
+  }
+
   render(){
     return(
         <KeyboardAvoidingView style={styles.containerView} behavior="padding" keyboardVerticalOffset={100} enabled>
@@ -81,7 +85,7 @@ export default class InscriptionPage extends React.Component{
                 <View style={styles.btn_connect_view}>
                   <TouchableHighlight style={styles.btn_connexion}>
                     <Button 
-                      onPress={()=>{}}
+                      onPress={this._goToChoicePage.bind(this)}
                       title="Je m'inscris"
                       color="#2b78e4"
                     />

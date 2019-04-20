@@ -17,8 +17,8 @@ export default class ConnexionPage extends React.Component{
     this.props.navigation.navigate('Inscription');
   }
 
-  _goToMenu(){
-    this.props.navigation.navigate('Menu')
+  _goToChoicePage(){
+    this.props.navigation.navigate('PageDeChoix')
   }
   
   //fonction de login
@@ -114,7 +114,7 @@ export default class ConnexionPage extends React.Component{
           <View style={styles.btn_connect_view}>
             <TouchableHighlight style={styles.btn_connexion}>
               <Button 
-                onPress={this._login.bind(this)}
+                onPress={this._goToChoicePage.bind(this)}
                 title="Connexion"
                 color="#2b78e4"
               />
