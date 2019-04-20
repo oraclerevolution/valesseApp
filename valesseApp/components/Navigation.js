@@ -5,6 +5,7 @@ import ConnexionPage from './ConnexionPage';
 import InscriptionPage from './InscriptionPage';
 import MenuPage from './MenuPage';
 import ListChapitre from './ListChapitre';
+import CentreInteret from './CentreInteret';
 
 const MainNavigator = createStackNavigator({
   Ouverture: {
@@ -12,7 +13,8 @@ const MainNavigator = createStackNavigator({
   Connexion: {screen: ConnexionPage },
   Inscription: {screen: InscriptionPage},
   Menu: {screen: MenuPage},
-  ListeChapitre: {screen: ListChapitre}
+  ListeChapitre: {screen: ListChapitre},
+  PageDeChoix: {screen: CentreInteret}
 });
 
 

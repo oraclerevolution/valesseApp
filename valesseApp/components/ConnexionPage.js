@@ -42,7 +42,7 @@ export default class ConnexionPage extends React.Component{
         var username = res.message;
 
         AsyncStorage.setItem('username', username);
-        this.props.navigation.navigate('Menu')
+        this.props.navigation.navigate('PageDeChoix');
         
       } else {
         alert(res.message)
